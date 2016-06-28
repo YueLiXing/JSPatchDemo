@@ -1,4 +1,4 @@
-require('NSString,Audiences');
+require('NSString,Audiences,User');
 defineClass('ViewController', {
 //            test: function() {
 //                console.log("456");
@@ -20,16 +20,15 @@ defineClass('ViewController', {
                 };
                 console.log("1");
                 var value = dict["listflag"];
-//                var buff = Audiences.alloc().init();
-//                buff.setListflag(NSNumber.numberWithLong(value));
-//                console.log(buff.listflag());
-                console.log(value);
-                console.log(NSNumber.numberWithLong(value));
-            
+                var buff = Audiences.alloc().init();
+                buff.setListflag(value);
+                console.log(buff.listflag());
+                console.log(typeof(value));
                 var user = User.alloc().init();
+                console.log("+++++++++++++++");
                 var userdict = dict["user"];
                 user.setName(userdict["name"]);
-                user.setUid(NSNumber.numberWithLong(userdict["uid"]));
+                user.setUid(userdict["uid"]);
                 console.log(value);
                 buff.setUser(user);
 //                var user = User.alloc().
